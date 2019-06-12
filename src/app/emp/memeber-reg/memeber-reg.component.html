@@ -5,19 +5,19 @@
                   <div class="card">
                       <div class="card-header">Register Memeber</div>
                       <div class="card-body">
-                          <form #memberdata="ngForm">
+                          <form #memberdata="ngForm" (ngSubmit)="loaddata()">
                               <div class="form-group row">
                                   <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="fullname" class="form-control" name="fullname" [(ngModel)]="fullname">
+                                      <input type="text" id="fullname" required #fullname [class.is-invalid]="" class="form-control" name="fullname" [(ngModel)]="memberModel.fullname">
                                   </div>
                               </div>
-                              
+                            <br>
 
                               <div class="form-group row">
                                   <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="phonenumber" name="phonenumber" [(ngModel)]="phonenumber" class="form-control">
+                                      <input type="text" id="phonenumber" required #phonenumber name="phonenumber" [(ngModel)]="memberModel.phonenumber" class="form-control">
                                   </div>
                               </div>
 
@@ -26,39 +26,28 @@
                                 <div class="col-md-6">
                                     <div class="radio-inline">
                                         <label>
-                                                <input type="radio" id="gender" name="gender" [(ngModel)]="gender" value="male"> Male
+                                                <input type="radio" id="gender" #gender name="gender" [(ngModel)]="memberModel.gender" value="male"> Male
                                         </label>
                                         &nbsp;
                                         <label>
-                                                <input type="radio" id="gender" name="gender" [(ngModel)]="gender" value="female"> Female
+                                                <input type="radio" id="gender" #gender name="gender" [(ngModel)]="memberModel.gender" value="female"> Female
                                         </label>
 
-
-                                            
                                     </div>
-                                       
-                                    </div>
-                                
+                                    </div>                              
                             </div>
-
-                              <!-- <div class="form-group row">
-                                  <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
-                                  <div class="col-md-6">
-                                      <input type="text" id="presentaddress" class="form-control">
-                                  </div>
-                              </div> -->
 
                               <div class="form-group row">
                                   <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
                                   <div class="col-md-6">
-                                      <input type="text" id="permanentaddress" name="permanentaddress" [(ngModel)]="permanentaddress" class="form-control" name="permanentaddress">
+                                      <input type="text" id="permanentaddress" required #permanentaddress name="permanentaddress" [(ngModel)]="memberModel.permanentaddress" class="form-control" name="permanentaddress">
                                   </div>
                               </div>
                               <div class="form-group row">
                                 <label for="date" class="col-md-4 col-form-label text-md-right"><abbr
                                             title="National Id Card">NID</abbr> Number</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="nidnumber" class="form-control"  [(ngModel)]="nidnumber" name="nidnumber">
+                                    <input type="text" id="nidnumber" #nidnumber required class="form-control"  [(ngModel)]="memberModel.nidnumber" name="nidnumber">
                                 </div>
                             </div>
 
@@ -68,7 +57,7 @@
                                 <div class="col-md-6">
                                   <input type="text"
                                          placeholder="Datepicker"
-                                         class="form-control" [(ngModel)]="dateofbirth" name="dateofbirth"
+                                         class="form-control" required #dateofbirth [(ngModel)]="memberModel.dateofbirth" name="dateofbirth"
                                          bsDatepicker>
                                 </div>
                             </div>

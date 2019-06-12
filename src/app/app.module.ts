@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { TrellorComponent } from './trellor/trellor.component';
 import { CollectorComponent } from './emp/collector/collector.component';
 import { MemeberRegComponent } from './emp/memeber-reg/memeber-reg.component';
-import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-import { FormsModule }from '@angular/forms'
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
